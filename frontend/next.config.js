@@ -12,6 +12,9 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   compress: true,
+  env: {
+    PORT: process.env.PORT || '3000',
+  },
   images: {
     remotePatterns: [
       {
