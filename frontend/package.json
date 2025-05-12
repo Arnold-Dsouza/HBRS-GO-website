@@ -6,12 +6,12 @@
     "dev": "next dev --turbopack -p 9002",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
-    "build": "next build",
-    "start": "next start -p $PORT",
+    "build": "next build && next export",
+    "start": "serve out -s -p $PORT",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "backend": "node server.js",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm install && npm run build"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.6.2",
