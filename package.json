@@ -1,35 +1,16 @@
 {
   "name": "hbrs-go",
   "version": "1.0.0",
-  "description": "Student portal for HBRS University with mensa integration",
-  "main": "frontend/server.js",
+  "private": true,
   "scripts": {
     "start": "node server.js",
-    "build": "cd frontend && npm install && npm run build",
-    "dev": "cd frontend && npm run dev",
-    "install-deps": "npm install && cd frontend && npm install",
-    "python-deps": "pip install -r requirements.txt"
+    "build": "cd frontend && npm install && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Arnold-Dsouza/HBRS-GO.git"
-  },
-  "keywords": [
-    "hbrs",
-    "university",
-    "student-portal",
-    "mensa",
-    "nextjs"
-  ],
-  "author": "Arnold Dsouza",
-  "license": "MIT",
   "engines": {
     "node": "18.x",
     "npm": "8.x"
   },
-  "private": true,
   "dependencies": {
-    "express": "^4.21.2",
-    "serve": "^14.2.4"
+    "express": "^4.18.2"
   }
 }
