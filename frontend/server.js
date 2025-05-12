@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 });
 
 // Serve static files from the Next.js build directory
-app.use(express.static(path.join(__dirname, '.next')));
+app.use(express.static(path.join(__dirname, '.next/static')));
 
 // API Routes
 app.get('/api/health', (req, res) => {
@@ -209,7 +209,7 @@ app.get('/api/mensa', async (req, res) => {
 
 // Serve the Next.js app for all other routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '.next', 'server', 'pages', 'index.html'));
+  res.sendFile(path.join(__dirname, '.next/standalone/pages/index.html'));
 });
 
 // Helper function to format date as YYYY-MM-DD
