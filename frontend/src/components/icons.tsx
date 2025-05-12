@@ -1,4 +1,14 @@
 import type { SVGProps } from 'react';
+import { 
+  Info,
+  BrainCircuit,
+  LayoutGrid,
+  Palette,
+  Languages,
+  ShieldCheck,
+  Github,
+  Heart
+} from 'lucide-react';
 
 export function HBRSLogo(props: SVGProps<SVGSVGElement>) {
   return (
@@ -26,6 +36,15 @@ export function HBRSLogo(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-// Export your icon components here
-export { default as SomeIcon } from 'lucide-react';
+export {
+  Info,
+  BrainCircuit,
+  LayoutGrid,
+  Palette,
+  Languages,
+  ShieldCheck,
+  Github,
+  Heart
+};
+
 // Add other icons as needed

@@ -1,14 +1,13 @@
 "use client";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Info, BrainCircuit, LayoutGrid, Palette, Languages, ShieldCheck, Github, Heart } from "lucide-react";
+import { Info, BrainCircuit, LayoutGrid, Palette, Languages, ShieldCheck, Github, Heart } from "@/components/icons";
 import { useLanguage } from '@/context/LanguageContext';
 import { HBRSLogo } from '@/components/icons';
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { SomeIcon } from '@/components/icons';
 
-const APP_VERSION = "1.0.0"; // Define app version
+const APP_VERSION = "1.0.0";
 
 export default function AboutPage() {
   const { t } = useLanguage();
@@ -19,8 +18,6 @@ export default function AboutPage() {
     { name: "Tailwind CSS", icon: Palette, descriptionKey: "about.tech.tailwind" },
     { name: "Shadcn UI", icon: Palette, descriptionKey: "about.tech.shadcn" },
     { name: "TypeScript", icon: Languages, descriptionKey: "about.tech.typescript" },
-    // { name: "Firebase Authentication (Mocked)", icon: ShieldCheck, descriptionKey: "about.tech.firebase" },
-    // { name: "Genkit (for future AI features)", icon: BrainCircuit, descriptionKey: "about.tech.genkit" },
   ];
 
   return (
