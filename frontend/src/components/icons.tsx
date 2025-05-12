@@ -25,3 +25,7 @@ export function HBRSLogo(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+// Export your icon components here
+export { default as SomeIcon } from 'lucide-react';
+// Add other icons as needed

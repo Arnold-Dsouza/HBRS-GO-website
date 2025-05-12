@@ -1,12 +1,12 @@
-
 "use client";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Info, BrainCircuit, LayoutGrid, Palette, Languages, ShieldCheck, Github, Heart } from "lucide-react";
 import { useLanguage } from '@/context/LanguageContext';
-import { HBRSLogo } from '@/components/icons'; 
+import { HBRSLogo } from '@/components/icons';
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { SomeIcon } from '@/components/icons';
 
 const APP_VERSION = "1.0.0"; // Define app version
 
