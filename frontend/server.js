@@ -19,8 +19,11 @@ app.use((req, res, next) => {
   next();
 });
 
-// Health check endpoint
-app.get('/', (req, res) => {
+// Serve static files from the Next.js build directory
+app.use(express.static(path.join(__dirname, '.next')));
+
+// API Routes
+app.get('/api/health', (req, res) => {
   console.log('Health check endpoint called');
   res.json({ 
     status: 'ok', 
@@ -204,10 +207,9 @@ app.get('/api/mensa', async (req, res) => {
   }
 });
 
-// Add a catch-all route handler
-app.use((req, res) => {
-  console.log(`404 Not Found: ${req.method} ${req.path}`);
-  res.status(404).json({ error: 'Not Found', path: req.path });
+// Serve the Next.js app for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '.next', 'server', 'pages', 'index.html'));
 });
 
 // Helper function to format date as YYYY-MM-DD
