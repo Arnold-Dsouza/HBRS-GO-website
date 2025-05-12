@@ -27,5 +27,8 @@
     "node": ">=18.0.0",
     "python": "3.13"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
 }
