@@ -8,8 +8,7 @@
     "build": "cd frontend && npm run build",
     "start": "cd frontend && node server.js",
     "install-deps": "npm install && cd frontend && npm install",
-    "python-deps": "pip install -r requirements.txt",
-    "heroku-postbuild": "cd frontend && npm install --legacy-peer-deps && npm install typescript @types/react @types/react-dom @types/node --save && npm run build && cd .. && npm run python-deps"
+    "heroku-postbuild": "cd frontend && npm install --legacy-peer-deps && npm install typescript @types/react @types/react-dom @types/node --save && npm run build"
   },
   "repository": {
     "type": "git",
