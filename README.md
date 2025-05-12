@@ -1,6 +1,6 @@
-# HBRS Mensa Application
+# HBRS GO Application
 
-A full-stack application for managing and displaying HBRS Mensa information.
+A full-stack application for managing and displaying HBRS information.
 
 ## Project Structure
 
@@ -97,3 +97,6 @@ NODE_ENV=production
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Developer
+Arnold Dsouza - arnolddsouza1999@gmail.com 
