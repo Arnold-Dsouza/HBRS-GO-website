@@ -9,7 +9,7 @@
     "start": "cd frontend && node server.js",
     "install-deps": "npm install && cd frontend && npm install",
     "python-deps": "pip install -r requirements.txt",
-    "heroku-postbuild": "npm run install-deps && npm run build && npm run python-deps"
+    "heroku-postbuild": "cd frontend && npm install && npm run build && cd .. && npm run python-deps"
   },
   "repository": {
     "type": "git",
