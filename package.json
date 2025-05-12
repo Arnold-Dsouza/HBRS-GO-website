@@ -24,9 +24,8 @@
   "author": "Arnold Dsouza",
   "license": "MIT",
   "engines": {
-    "node": "16.x",
-    "npm": "8.x",
-    "python": "3.13"
+    "node": "18.x",
+    "npm": "8.x"
   },
   "private": true,
   "dependencies": {
