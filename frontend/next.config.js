@@ -60,7 +60,7 @@ const nextConfig = {
         },
       };
     }
-    
+
     return config;
   },
 };
