@@ -7,11 +7,11 @@
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
     "build": "next build",
-    "start": "serve -s build -p $PORT",
+    "start": "next start -p $PORT",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "backend": "node server.js",
-    "heroku-postbuild": "npm install && npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.6.2",
