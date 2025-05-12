@@ -1,4 +1,3 @@
-
 "use client";
 import type { ReactNode } from 'react';
 import { createContext, useContext, useState, useEffect } from 'react';
@@ -65,7 +64,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Only perform routing logic if not loading
-    if (!loading) {
+    if (!loading && pathname) {
       if (!user && !PUBLIC_PATHS.includes(pathname)) {
           router.push('/signin');
       } else if (user && PUBLIC_PATHS.includes(pathname)) {
