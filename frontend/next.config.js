@@ -9,6 +9,8 @@ const nextConfig = {
   },
   output: 'standalone',
   distDir: '.next',
+  poweredByHeader: false,
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {

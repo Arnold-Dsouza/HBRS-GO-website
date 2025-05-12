@@ -19,8 +19,18 @@ app.use((req, res, next) => {
   next();
 });
 
+// Set security headers
+app.use((req, res, next) => {
+  res.setHeader(
+    'Content-Security-Policy',
+    "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'"
+  );
+  next();
+});
+
 // Serve static files from the Next.js build directory
 app.use(express.static(path.join(__dirname, '.next/static')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // API Routes
 app.get('/api/health', (req, res) => {
@@ -209,7 +219,13 @@ app.get('/api/mensa', async (req, res) => {
 
 // Serve the Next.js app for all other routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '.next/standalone/pages/index.html'));
+  const indexPath = path.join(__dirname, '.next/standalone/pages/index.html');
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    console.error('Index file not found at:', indexPath);
+    res.status(404).send('Application not built correctly. Please rebuild the application.');
+  }
 });
 
 // Helper function to format date as YYYY-MM-DD
