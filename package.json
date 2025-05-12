@@ -4,9 +4,9 @@
   "description": "Student portal for HBRS University with mensa integration",
   "main": "frontend/server.js",
   "scripts": {
+    "start": "node server.js",
+    "build": "cd frontend && npm install && npm run build",
     "dev": "cd frontend && npm run dev",
-    "build": "cd frontend && npm run build",
-    "start": "cd frontend && node server.js",
     "install-deps": "npm install && cd frontend && npm install",
     "python-deps": "pip install -r requirements.txt"
   },
@@ -24,11 +24,13 @@
   "author": "Arnold Dsouza",
   "license": "MIT",
   "engines": {
-    "node": ">=18.0.0",
+    "node": "16.x",
+    "npm": "8.x",
     "python": "3.13"
   },
   "private": true,
   "dependencies": {
+    "express": "^4.21.2",
     "serve": "^14.2.4"
   }
 }
