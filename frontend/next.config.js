@@ -23,9 +23,6 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-  },
-  experimental: {
-    outputStandalone: true
   }
 };
 
