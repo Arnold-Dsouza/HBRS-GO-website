@@ -90,12 +90,11 @@ export default function AboutPage() {
               </Link>
             </Button>
           </section>
-
           <div className="text-center text-sm text-muted-foreground pt-6 border-t mt-8">
             <p>{t('appName')} - {t('about.version', { versionNumber: APP_VERSION })}</p>
             <p className="flex items-center justify-center">
                 <Heart className="mr-1.5 h-4 w-4 text-red-500" />
-                {t('about.madeWithLove', { name: "Arnold Dsouza"})}
+                Made with love by Arnold Dsouza
             </p>
             <p>&copy; {new Date().getFullYear()} {t('about.copyright')}</p>
           </div>

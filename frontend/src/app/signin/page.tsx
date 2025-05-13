@@ -1,10 +1,10 @@
-
 "use client";
 
 import { useState, type FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Mail, Lock, Loader2 } from 'lucide-react';
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -61,7 +61,14 @@ export default function SignInPage() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md shadow-xl">
         <CardHeader className="items-center text-center">
-          <HBRSLogo className="h-20 w-20 mb-4 text-primary" />
+          <Image 
+            src="/images/hbrs.png"
+            alt="HBRS Logo"
+            width={1280}
+            height={230}
+            className="h-10 w-auto mb-4"
+            priority
+          />
           <CardTitle className="text-3xl font-bold">{t('appName')}</CardTitle>
           <CardDescription>{t('signin.subtitle')}</CardDescription>
         </CardHeader>
@@ -115,12 +122,6 @@ export default function SignInPage() {
                 t('signin.signInButton')
               )}
             </Button>
-             <p className="text-center text-sm text-muted-foreground">
-              {t('signin.noAccount')}{' '}
-              <Link href="/signup" className="font-medium text-primary hover:underline">
-                {t('signin.signUpLink')}
-              </Link>
-            </p>
           </CardFooter>
         </form>
       </Card>
