@@ -1,4 +1,4 @@
-# HBRS GO Application
+# HBRS GO Application.
 
 A full-stack application for managing and displaying HBRS information.
 
