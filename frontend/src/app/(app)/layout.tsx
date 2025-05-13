@@ -21,6 +21,9 @@ import {
   Link2, 
   Info, // Added for About page
   CreditCard, // Added for Card Recharge
+  Moon,
+  Sun,
+  Languages,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -39,12 +42,14 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext'; 
+import { useTheme } from '@/context/ThemeContext';
 
 export default function AppLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   const { user, signOut, loading } = useAuth();
-  const { t } = useLanguage(); 
+  const { t, setLanguage } = useLanguage();
+  const { theme, setTheme } = useTheme();
   const [isClient, setIsClient] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
   
@@ -191,6 +196,32 @@ export default function AppLayout({ children }: { children: ReactNode }) {
           <div className="w-full flex-1">
             {/* Optional: Add search or other header elements here */}
           </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="mr-2">
+                <Languages className="h-5 w-5" />
+                <span className="sr-only">{t('settings.language.title')}</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setLanguage('en')}>
+                English
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLanguage('de')}>
+                Deutsch
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            className="mr-2"
+          >
+            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">{t('settings.appearance.darkMode')}</span>
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="secondary" size="icon" className="rounded-full">

@@ -250,7 +250,17 @@
       "updateSuccess": "Profile Updated",
       "updateSuccessDesc": "Your display name has been saved.",
       "updateFailed": "Update Failed",
-      "updateFailedDesc": "Could not update your profile. Please try again."
+      "updateFailedDesc": "Could not update your profile. Please try again.",
+      "changePhoto": "Change Profile Photo",
+      "uploading": "Uploading...",
+      "invalidFileType": "Invalid File Type",
+      "invalidFileTypeDesc": "Please select an image file (JPEG, PNG, etc.).",
+      "fileTooLarge": "File Too Large",
+      "fileTooLargeDesc": "Please select an image smaller than 5MB.",
+      "imageUpdateSuccess": "Profile Photo Updated",
+      "imageUpdateSuccessDesc": "Your profile photo has been updated successfully.",
+      "imageUpdateFailed": "Update Failed",
+      "imageUpdateFailedDesc": "Could not update your profile photo. Please try again."
     },
     "appearance": {
       "title": "Appearance",

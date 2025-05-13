@@ -218,7 +218,17 @@
       "updateSuccess": "Profil aktualisiert",
       "updateSuccessDesc": "Ihr Anzeigename wurde gespeichert.",
       "updateFailed": "Aktualisierung fehlgeschlagen",
-      "updateFailedDesc": "Ihr Profil konnte nicht aktualisiert werden. Bitte versuchen Sie es erneut."
+      "updateFailedDesc": "Ihr Profil konnte nicht aktualisiert werden. Bitte versuchen Sie es erneut.",
+      "changePhoto": "Profilfoto ändern",
+      "uploading": "Wird hochgeladen...",
+      "invalidFileType": "Ungültiger Dateityp",
+      "invalidFileTypeDesc": "Bitte wählen Sie eine Bilddatei (JPEG, PNG, etc.).",
+      "fileTooLarge": "Datei zu groß",
+      "fileTooLargeDesc": "Bitte wählen Sie ein Bild kleiner als 5MB.",
+      "imageUpdateSuccess": "Profilfoto aktualisiert",
+      "imageUpdateSuccessDesc": "Ihr Profilfoto wurde erfolgreich aktualisiert.",
+      "imageUpdateFailed": "Aktualisierung fehlgeschlagen",
+      "imageUpdateFailedDesc": "Ihr Profilfoto konnte nicht aktualisiert werden. Bitte versuchen Sie es erneut."
     },
     "appearance": {
       "title": "Erscheinungsbild",
