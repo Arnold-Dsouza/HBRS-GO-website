@@ -24,6 +24,7 @@ import {
   Moon,
   Sun,
   Languages,
+  Gamepad,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -43,6 +44,7 @@ import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext'; 
 import { useTheme } from '@/context/ThemeContext';
+import Image from "next/image";
 
 export default function AppLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -66,6 +68,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
     { href: '/grades', labelKey: 'nav.grades', icon: GraduationCap },
     { href: '/library', labelKey: 'nav.library', icon: Library },
     { href: '/services', labelKey: 'nav.services', icon: Users },
+    { href: '/game', labelKey: 'nav.game', icon: Gamepad },
     { href: '/about', labelKey: 'nav.about', icon: Info }, // Added About page
     { href: '/settings', labelKey: 'nav.settings', icon: Settings },
   ];
@@ -143,8 +146,16 @@ export default function AppLayout({ children }: { children: ReactNode }) {
               className="flex items-center gap-2 font-semibold text-sidebar-foreground p-0"
               onClick={() => handleNavigation('/dashboard')}
             >
-              <HBRSLogo className="h-8 w-8" />
-              <span className="">{t('appName')}</span>
+              <div className="bg-white p-1 rounded">
+                <Image 
+                  src="/images/hbrs.png"
+                  alt="HBRS Logo"
+                  width={1280}
+                  height={230}
+                  className="h-10 w-auto"
+                  priority
+                />
+              </div>
             </Button>
           </div>
           <div className="flex-1 overflow-y-auto">
@@ -178,7 +189,16 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                   className="flex items-center gap-2 font-semibold text-sidebar-foreground p-0"
                   onClick={() => handleNavigation('/dashboard')}
                 >
-                  <HBRSLogo className="h-8 w-8" />
+                  <div className="bg-white p-1 rounded">
+                    <Image 
+                      src="/images/hbrs.png"
+                      alt="HBRS Logo"
+                      width={1280}
+                      height={230}
+                      className="h-8 w-auto"
+                      priority
+                    />
+                  </div>
                   <span className="">{t('appName')}</span>
                 </Button>
             </div>

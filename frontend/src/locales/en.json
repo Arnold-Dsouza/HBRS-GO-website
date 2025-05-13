@@ -4,17 +4,18 @@
   "loadingApp": "Loading HBRS Go...",
   "nav": {
     "dashboard": "Dashboard",
+    "menu": "Menu",
     "semesterticket": "Semesterticket",
-    "cardRecharge": "Student Card Recharge",
+    "cardRecharge": "Card Recharge",
     "timetable": "Timetable",
     "grades": "Grades",
     "library": "Library",
-    "menu": "Mensa St. Augustin",
-    "services": "Student Services",
-    "settings": "Settings",
+    "services": "Services",
+    "game": "Game",
     "about": "About",
-    "externalLinks": "External Links",
-    "signOut": "Sign Out"
+    "settings": "Settings",
+    "signOut": "Sign Out",
+    "externalLinks": "External Links"
   },
   "dashboard": {
     "welcome": "Welcome back, {name}!",
