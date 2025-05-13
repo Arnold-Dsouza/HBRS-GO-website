@@ -17,12 +17,10 @@ import { useLanguage } from '@/context/LanguageContext';
 
 export default function SignInPage() {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState(''); 
   const [isLoading, setIsLoading] = useState(false);
-  // Error state is now handled by toasts from AuthContext
 
   const { signIn } = useAuth();
-  const router = useRouter(); // router might not be needed if AuthContext handles all navigation
+  const router = useRouter();
   const { toast } = useToast();
   const { t } = useLanguage();
 
@@ -31,21 +29,13 @@ export default function SignInPage() {
     setIsLoading(true);
 
     try {
-      await signIn(email, password); 
-      // Successful sign-in will redirect via AuthContext effect
-      // Toast for success is better handled in AuthContext or upon redirection to dashboard
-      // to avoid toast appearing then immediately disappearing on navigation.
-      // For this exercise, we'll keep a local toast for explicit feedback here.
+      await signIn(email);
       toast({
         title: t('signin.successTitle'),
         description: t('signin.successDesc'),
       });
     } catch (err: any) {
-      // Specific errors are toasted by AuthContext. 
-      // A generic fallback can be here if needed, but AuthContext should cover it.
-      // If err.message is one of the specific messages from AuthContext, it's already handled.
-      // Otherwise, show a generic one.
-      if (err.message !== 'Invalid email format' && err.message !== 'Invalid password') {
+      if (err.message !== 'Invalid email format') {
         toast({
           variant: 'destructive',
           title: t('signin.errorTitle'),
@@ -54,7 +44,6 @@ export default function SignInPage() {
       }
       setIsLoading(false);
     }
-    // setLoading(false) is handled by AuthContext redirect or error above
   };
 
   return (
@@ -89,27 +78,6 @@ export default function SignInPage() {
                 />
               </div>
             </div>
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="password">{t('signin.passwordLabel')}</Label>
-                {/* <Link href="#" className="text-sm text-primary hover:underline">
-                  {t('signin.forgotPassword')}
-                </Link> */}
-              </div>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  id="password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="pl-10"
-                  placeholder="Password" 
-                />
-              </div>
-            </div>
-            {/* Removed local error display, relying on toasts */}
           </CardContent>
           <CardFooter className="flex flex-col gap-4">
             <Button type="submit" className="w-full" disabled={isLoading}>

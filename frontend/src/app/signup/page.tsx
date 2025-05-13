@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, type FormEvent } from 'react';
@@ -20,28 +19,18 @@ const EMAIL_REGEX_SIGNUP = /^[a-zA-Z0-9_.-]+?\.[a-zA-Z0-9_.-]+?@smail\.inf\.h-br
 export default function SignUpPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  // Error state is now handled by toasts from AuthContext or local validation toasts
 
-  const { signIn } = useAuth(); // Using signIn for mock, which can take name
+  const { signIn } = useAuth();
   const { toast } = useToast();
   const { t } = useLanguage();
 
   const handleSignUp = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (password !== confirmPassword) {
-      toast({
-        variant: "destructive",
-        title: t('signup.passwordMismatch'),
-      });
-      return;
-    }
     if (!EMAIL_REGEX_SIGNUP.test(email)) {
       toast({
         variant: 'destructive',
-        title: t('signin.invalidEmailTitle'), // Re-use for consistency
+        title: t('signin.invalidEmailTitle'),
         description: t('signin.invalidEmailDesc'),
       });
       return;
@@ -50,21 +39,15 @@ export default function SignUpPage() {
     setIsLoading(true);
 
     try {
-      // Using signIn for mock as it accepts an optional name for displayName.
-      // Password is not passed here as per the prompt focusing on sign-in validation.
-      // If sign-up should also validate/use password, signIn in AuthContext needs adjustment.
-      await signIn(email, undefined, name); 
+      await signIn(email, undefined, name);
       toast({
         title: t('signup.successTitle'),
         description: t('signup.successDesc'),
       });
-      // AuthContext will redirect to dashboard
     } catch (err: any) {
-       // Specific errors like invalid email format might be caught by signIn if we enhance it
-       // For now, local validation handles it. Generic errors from signIn:
-       toast({
+      toast({
         variant: "destructive",
-        title: t('signup.errorTitle'), // Adding a signup specific error title
+        title: t('signup.errorTitle'),
         description: err.message || t('signup.genericError'),
       });
       setIsLoading(false);
@@ -111,37 +94,6 @@ export default function SignUpPage() {
                 />
               </div>
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">{t('signup.passwordLabel')}</Label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  id="password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="pl-10"
-                  placeholder="********"
-                />
-              </div>
-            </div>
-             <div className="space-y-2">
-              <Label htmlFor="confirm-password">{t('signup.confirmPasswordLabel')}</Label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  id="confirm-password"
-                  type="password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  required
-                  className="pl-10"
-                  placeholder="********"
-                />
-              </div>
-            </div>
-            {/* Removed local error display, relying on toasts */}
           </CardContent>
           <CardFooter className="flex flex-col gap-4">
             <Button type="submit" className="w-full" disabled={isLoading}>

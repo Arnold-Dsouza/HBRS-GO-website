@@ -88,17 +88,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       throw new Error('Invalid email format');
     }
 
-    // Validate password for sign-in (only if password is provided, for sign-in flow)
-    if (password && (password !== 'admin' && password !== 'Admin')) {
-      toast({
-        variant: 'destructive',
-        title: t('signin.invalidPasswordTitle'),
-        description: t('signin.invalidPasswordDesc'),
-      });
-      setLoading(false);
-      throw new Error('Invalid password');
-    }
-
     const mockUID = 'mock-uid-' + email.replace(/[^a-zA-Z0-9]/g, '');
     const displayNameFromEmail = email.split('@')[0];
     const [firstName, lastName] = displayNameFromEmail.split('.');
