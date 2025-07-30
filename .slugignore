@@ -8,6 +8,12 @@ chroma_db/
 *.log
 *.md
 *.env
+.env.local
+venv/
+.next/
+.idx/
+.modified
+frontend/public/images/
 tests/
 *.bat
 *.gif
@@ -16,3 +22,5 @@ tests/
 *.ico
 .vscode/
 .git/
+LICENSE
+README.md
