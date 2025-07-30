@@ -1,5 +1,5 @@
 from langchain_openai import ChatOpenAI
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
