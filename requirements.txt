@@ -27,3 +27,4 @@ typing_extensions==4.13.2
 
 
 langchain-huggingface
+sentence-transformers

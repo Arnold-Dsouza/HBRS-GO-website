@@ -9,8 +9,14 @@ from fastapi.responses import JSONResponse
 from dotenv import load_dotenv
 
 
+
 load_dotenv()
 import os
+
+# Set HuggingFace cache directory to /tmp for Heroku slug size workaround
+os.environ["HF_HOME"] = "/tmp/huggingface"
+os.environ["TRANSFORMERS_CACHE"] = "/tmp/huggingface"
+os.environ["HF_DATASETS_CACHE"] = "/tmp/huggingface"
 
 
 # configuration
