@@ -1,6 +1,6 @@
 # Ignore test, docs, local dev, and cache files for Heroku slug size reduction
 *.pyc
-<!-- __pycache__/ -->
+__pycache__/
 *.pyo
 *.pyd
 *.db
@@ -23,19 +23,19 @@ node_modules/
 frontend/docs/
 <!-- frontend/public/images/ -->
 frontend/.next/
-<!-- frontend/.env* -->
+frontend/.env*
 <!-- Backend/chroma_db/ -->
 <!-- Backend/__pycache__/ -->
 <!-- Backend/*.log -->
-<!-- src/tests/ -->
-<!-- src/__pycache__/ -->
-<!-- *.bak -->
-<!-- *.tmp -->
-<!-- *.swp -->
-<!-- *.egg-info/ -->
-<!-- dist/ -->
-<!-- build/ -->
-<!-- coverage/ -->
-<!-- *.egg -->
-<!-- *.tar.gz -->
-<!-- *.whl -->
+src/tests/
+src/__pycache__/
+*.bak
+*.tmp
+*.swp
+*.egg-info/
+dist/
+build/
+coverage/
+*.egg
+*.tar.gz
+*.whl
