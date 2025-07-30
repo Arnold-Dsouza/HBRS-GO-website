@@ -20,11 +20,10 @@ __pycache__/
 .git/
 .gitignore
 node_modules/
-frontend/tests/
 frontend/docs/
 <!-- frontend/public/images/ -->
 frontend/.next/
-frontend/.env*
+<!-- frontend/.env* -->
 Backend/chroma_db/
 <!-- Backend/__pycache__/ -->
 <!-- Backend/*.log -->
