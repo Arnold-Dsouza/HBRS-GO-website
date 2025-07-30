@@ -1,1 +1,1 @@
-web: python -m uvicorn chatbot:app --host 0.0.0.0 --port 8000
+web: sh start.sh
