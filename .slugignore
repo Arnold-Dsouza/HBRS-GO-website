@@ -13,8 +13,8 @@ __pycache__/
 *.hdf5
 *.ipynb
 .DS_Store
-.env
-.env.*
+<!-- .env -->
+<!-- .env.* -->
 .vscode/
 .idea/
 .git/
@@ -22,9 +22,10 @@ __pycache__/
 node_modules/
 frontend/tests/
 frontend/docs/
-frontend/public/images/
+<!-- frontend/public/images/ -->
 frontend/.next/
 frontend/.env*
+<!-- Backend/chroma_db/ -->
 Backend/__pycache__/
 Backend/*.log
 src/tests/
