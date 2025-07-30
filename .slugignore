@@ -16,6 +16,11 @@ frontend/.idx/
 frontend/.next/
 frontend/tests/
 frontend/public/images/
+frontend/docs/
+frontend/README.md
+frontend/src/ai/
+frontend/src/app/(app)/
+frontend/src/app/favicon.ico
 tests/
 *.bat
 *.gif
