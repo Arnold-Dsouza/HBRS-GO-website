@@ -27,7 +27,7 @@ frontend/.next/
 frontend/.env*
 Backend/chroma_db/
 <!-- Backend/__pycache__/ -->
-Backend/*.log
+<!-- Backend/*.log -->
 src/tests/
 src/__pycache__/
 *.bak
