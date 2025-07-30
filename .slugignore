@@ -1,0 +1,24 @@
+# Exclude files and folders from Heroku slug to reduce size
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.md
+*.env
+*.git
+*.gitignore
+tests/
+test/
+*.test.*
+*.spec.*
+*.bat
+*.sh
+node_modules/
+frontend/node_modules/
+Backend/chroma_db/
+frontend/.next/cache/
+frontend/.next/static/
+Backend/__pycache__/
