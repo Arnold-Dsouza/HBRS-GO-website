@@ -27,15 +27,15 @@ frontend/.next/
 Backend/chroma_db/
 <!-- Backend/__pycache__/ -->
 <!-- Backend/*.log -->
-src/tests/
-src/__pycache__/
-*.bak
-*.tmp
-*.swp
-*.egg-info/
-dist/
-build/
-coverage/
-*.egg
-*.tar.gz
-*.whl
+<!-- src/tests/ -->
+<!-- src/__pycache__/ -->
+<!-- *.bak -->
+<!-- *.tmp -->
+<!-- *.swp -->
+<!-- *.egg-info/ -->
+<!-- dist/ -->
+<!-- build/ -->
+<!-- coverage/ -->
+<!-- *.egg -->
+<!-- *.tar.gz -->
+<!-- *.whl -->
