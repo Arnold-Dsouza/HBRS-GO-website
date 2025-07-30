@@ -12,7 +12,9 @@ Backend/chroma_db/
 venv/
 .next/
 .idx/
-.modified
+frontend/.idx/
+frontend/.next/
+frontend/tests/
 frontend/public/images/
 tests/
 *.bat
