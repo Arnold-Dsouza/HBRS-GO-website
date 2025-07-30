@@ -27,5 +27,8 @@
     "node": "18.x",
     "python": "3.13"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
 }

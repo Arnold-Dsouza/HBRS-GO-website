@@ -3,6 +3,7 @@ import type {Metadata} from 'next';
 import { Geist } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import Chatbot from '@/components/Chatbot';
 import { AuthProvider } from '@/context/AuthContext';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { LanguageProvider } from '@/context/LanguageContext'; // Added
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   description: 'Your H-BRS campus companion app.',
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,12 +28,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} font-sans antialiased`} suppressHydrationWarning={true}>
         <ThemeProvider>
-          <LanguageProvider> {/* Added */}
+          <LanguageProvider>
             <AuthProvider>
               {children}
+              <Chatbot />
               <Toaster />
             </AuthProvider>
-          </LanguageProvider> {/* Added */}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
