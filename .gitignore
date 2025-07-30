@@ -13,7 +13,6 @@ build/
 dist/
 .vercel/
 
-
 # Python
 __pycache__/
 *.py[cod]
@@ -26,24 +25,6 @@ env/
 *.egg-info/
 .installed.cfg
 *.egg
-
-# Ignore vector DB, model, and cache directories
-Backend/chroma_db/
-*.bin
-*.pickle
-*.pt
-*.h5
-*.ckpt
-*.onnx
-*.tar.gz
-*.zip
-*.npz
-*.npy
-/tmp
-model/
-models/
-cache/
-/.cache/
 
 # Environment variables
 .env

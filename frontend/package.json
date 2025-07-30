@@ -10,8 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "backend": "node server.js",
-    "heroku-postbuild": "npm install && npm run build"
+    "backend": "node server.js"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.6.2",

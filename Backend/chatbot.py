@@ -9,14 +9,8 @@ from fastapi.responses import JSONResponse
 from dotenv import load_dotenv
 
 
-
 load_dotenv()
 import os
-
-# Set HuggingFace cache directory to /tmp for Heroku slug size workaround
-os.environ["HF_HOME"] = "/tmp/huggingface"
-os.environ["TRANSFORMERS_CACHE"] = "/tmp/huggingface"
-os.environ["HF_DATASETS_CACHE"] = "/tmp/huggingface"
 
 
 # configuration
@@ -88,10 +82,6 @@ def stream_response(message, history):
 
 
 # FastAPI app for HTTP API
-
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
-
 app = FastAPI()
 
 # Allow CORS for local frontend dev
@@ -103,10 +93,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Serve React static files
-app.mount("/static", StaticFiles(directory="frontend/build/static"), name="static")
-
-
 @app.post("/api/chatbot")
 async def chatbot_endpoint(request: Request):
     data = await request.json()
@@ -117,9 +103,3 @@ async def chatbot_endpoint(request: Request):
     for partial in stream_response(message, history):
         response = partial
     return JSONResponse({"response": response})
-
-# Serve React index.html for all other routes (for React Router support)
-@app.get("/{full_path:path}")
-async def serve_react_app(full_path: str):
-    index_path = os.path.join("frontend", "build", "index.html")
-    return FileResponse(index_path)
