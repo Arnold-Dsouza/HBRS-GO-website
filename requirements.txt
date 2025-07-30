@@ -44,8 +44,8 @@ frozenlist==1.5.0
 fsspec==2025.3.2
 google-auth==2.39.0
 googleapis-common-protos==1.70.0
-gradio==5.25.1
-gradio_client==1.8.0
+# gradio==5.25.1  # Not required for backend
+# gradio_client==1.8.0  # Not required for backend
 greenlet==3.1.1
 groovy==0.1.2
 grpcio==1.71.0
@@ -98,7 +98,7 @@ orjson==3.10.16
 overrides==7.7.0
 packaging==24.2
 pandas==2.2.3
-pillow==11.2.1
+# pillow==11.2.1  # Not required for backend
 posthog==4.0.0
 propcache==0.3.1
 protobuf==5.29.4
@@ -107,11 +107,11 @@ pyasn1_modules==0.4.2
 pydantic==2.11.3
 pydantic-settings==2.8.1
 pydantic_core==2.33.1
-pydub==0.25.1
-Pygments==2.19.1
-pypdf==5.4.0
-PyPika==0.48.9
-pyproject_hooks==1.2.0
+# pydub==0.25.1  # Not required for backend
+# Pygments==2.19.1  # Not required for backend
+# pypdf==5.4.0  # Not required for backend
+# PyPika==0.48.9  # Not required for backend
+# pyproject_hooks==1.2.0  # Not required for backend
 pyreadline3==3.5.4
 python-dateutil==2.9.0.post0
 python-dotenv==1.1.0
