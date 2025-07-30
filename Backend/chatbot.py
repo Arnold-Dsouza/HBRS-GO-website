@@ -1,5 +1,5 @@
 from langchain_openai import ChatOpenAI
-from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -27,11 +27,8 @@ llm = ChatOpenAI(
     openai_api_base=os.getenv("OPENAI_API_BASE"),
 )
 
-# set up the embedding function for retrieval (remote)
-embeddings_model = HuggingFaceInferenceAPIEmbeddings(
-    api_key=os.getenv("HUGGINGFACE_API_KEY"),
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-)
+# set up the embedding function for retrieval
+embeddings_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 # connect to the chromadb with embedding_function
 vector_store = Chroma(
     collection_name="example_collection",
