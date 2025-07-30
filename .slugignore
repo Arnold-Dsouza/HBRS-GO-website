@@ -24,7 +24,7 @@ frontend/docs/
 <!-- frontend/public/images/ -->
 frontend/.next/
 <!-- frontend/.env* -->
-Backend/chroma_db/
+<!-- Backend/chroma_db/ -->
 <!-- Backend/__pycache__/ -->
 <!-- Backend/*.log -->
 <!-- src/tests/ -->
