@@ -205,16 +205,17 @@ export default function Chatbot() {
           onClick={() => setIsOpen(!isOpen)}
           size="lg"
           className={cn(
-            "h-14 w-14 rounded-full shadow-lg transition-all duration-200 hover:scale-110",
+            "h-14 w-14 rounded-full shadow-lg transition-all duration-200 hover:scale-110 p-0",
             "bg-primary hover:bg-primary/90 text-primary-foreground",
             isOpen && "rotate-180"
           )}
         >
-          {isOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <MessageCircle className="h-6 w-6" />
-          )}
+          <img
+            src="/images/hbrslogo.png"
+            alt="HBRS Logo"
+            className="h-10 w-10 object-contain"
+            style={{ filter: isOpen ? 'grayscale(100%)' : 'none', transition: 'filter 0.2s' }}
+          />
         </Button>
       </div>
     </>
