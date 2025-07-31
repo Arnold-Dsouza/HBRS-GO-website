@@ -368,7 +368,7 @@
     "signUpLink": "Sign Up",
     "genericError": "Sign-in failed. Please check your credentials and try again.",
     "successTitle": "Signed In",
-    "successDesc": "Welcome back! Redirecting to your dashboard...",
+    "successDesc": "",
     "errorTitle": "Sign-In Error",
     "invalidEmailTitle": "Invalid Email Format",
     "invalidEmailDesc": "Please use your H-BRS email (name.surname@smail.inf.h-brs.de).",

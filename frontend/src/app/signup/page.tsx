@@ -40,10 +40,7 @@ export default function SignUpPage() {
 
     try {
       await signIn(email, undefined, name);
-      toast({
-        title: t('signup.successTitle'),
-        description: t('signup.successDesc'),
-      });
+      // Removed welcome/redirecting notification
     } catch (err: any) {
       toast({
         variant: "destructive",

@@ -30,10 +30,7 @@ export default function SignInPage() {
 
     try {
       await signIn(email);
-      toast({
-        title: t('signin.successTitle'),
-        description: t('signin.successDesc'),
-      });
+      // Removed welcome back notification
     } catch (err: any) {
       if (err.message !== 'Invalid email format') {
         toast({

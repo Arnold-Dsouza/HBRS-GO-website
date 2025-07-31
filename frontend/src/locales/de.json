@@ -335,7 +335,7 @@
     "signUpLink": "Registrieren",
     "genericError": "Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Anmeldedaten und versuchen Sie es erneut.",
     "successTitle": "Angemeldet",
-    "successDesc": "Willkommen zurück! Weiterleitung zum Dashboard...",
+    "successDesc": "",
     "errorTitle": "Anmeldefehler",
     "invalidEmailTitle": "Ungültiges E-Mail-Format",
     "invalidEmailDesc": "Bitte verwenden Sie Ihre H-BRS E-Mail (name.nachname@smail.inf.h-brs.de).",

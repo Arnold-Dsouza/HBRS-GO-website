@@ -1,6 +1,17 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
+// Add CSS for send animation
+const sendAnimStyle = `
+  @keyframes send-fly {
+    0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
+    60% { transform: translateY(-20px) scale(1.2) rotate(-20deg); opacity: 1; }
+    100% { transform: translateY(-40px) scale(0.5) rotate(-45deg); opacity: 0; }
+  }
+  .send-anim {
+    animation: send-fly 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+`;
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -27,6 +38,7 @@ export default function Chatbot() {
   ]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [sendAnim, setSendAnim] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -39,6 +51,9 @@ export default function Chatbot() {
 
   const sendMessage = async () => {
     if (!inputMessage.trim() || isLoading) return;
+
+    setSendAnim(true);
+    setTimeout(() => setSendAnim(false), 500);
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -190,7 +205,9 @@ export default function Chatbot() {
                     disabled={!inputMessage.trim() || isLoading}
                     size="sm"
                   >
-                    <Send className="h-4 w-4" />
+                    <span className={sendAnim ? 'send-anim' : ''}>
+                      <Send className="h-4 w-4" />
+                    </span>
                   </Button>
                 </div>
               </div>
@@ -218,6 +235,8 @@ export default function Chatbot() {
           />
         </Button>
       </div>
+      {/* Animation style for send button */}
+      <style>{sendAnimStyle}</style>
     </>
   );
 }
