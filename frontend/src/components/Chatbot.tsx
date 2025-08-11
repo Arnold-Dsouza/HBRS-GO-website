@@ -31,7 +31,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: 'Hello! I\'m your HBRS assistant. How can I help you today?',
+      content: 'Hello! I\'m your HBRS assistant. I can help you with questions about HBRS programs, campus life, admissions, student services, and more. How can I assist you today?',
       sender: 'bot',
       timestamp: new Date(),
     }
@@ -67,13 +67,15 @@ export default function Chatbot() {
     setIsLoading(true);
 
     try {
-      // Convert messages to history format for the chatbot
-      const history = messages.map(msg => [
-        msg.sender === 'user' ? msg.content : '',
-        msg.sender === 'bot' ? msg.content : ''
-      ]).filter(([user, bot]) => user || bot);
+      // Convert messages to history format for the Gemini chatbot
+      const history = messages
+        .filter(msg => msg.sender !== 'bot' || !msg.content.includes("Hello! I'm your HBRS assistant")) // Skip initial greeting
+        .map(msg => [
+          msg.sender === 'user' ? msg.content : '',
+          msg.sender === 'bot' ? msg.content : ''
+        ]).filter(([user, bot]) => user || bot);
 
-      const response = await fetch('/api/chatbot', {
+      const response = await fetch('/api/gemini-chatbot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
